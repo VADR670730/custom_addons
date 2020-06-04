@@ -56,5 +56,21 @@
     <menuitem name="Server to list" id="test_module" parent="test_module.menu_2"
               action="test_module.action_server"/>
 -->
+    <record id="student_menu_action" model="ir.actions.act_window">
+      <field name="name">Students</field>
+      <field name="res_model">student.student</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="view_mode">tree,form</field>
+      <field name="domain">[]</field>
+      <field name="help" type="html">
+      <p class="oe_view_nocontent_create">Create The First Student</p>
+      </field>
+    </record>
+    <menuitem id="school_menu"
+      name = "School"/>
+    <menuitem id="school_student_menu"
+      parent="school_menu"
+      name="Student"
+      action="student_menu_action"/>
   </data>
 </odoo>

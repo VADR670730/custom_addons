@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "test_module",
+    'name': "School",
 
     'summary': """
         Test""",
 
     'description': """
         Phục vụ cho mục đích chạy thử 1 số thay đổi, sau đó deploy trên Odoo
+        Testing 6th time
     """,
 
     'author': "PepeShop",
@@ -23,12 +24,17 @@
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        'security/ir.model.access.csv',
+        'views/student_view.xml',
+        # 'views/templates.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
     ],
+    'images':[],
+    'license':'AGPL-3',
+    'installable':True,
+    'Application':False,
+    'auto_installation':False,
 }
