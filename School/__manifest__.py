@@ -7,7 +7,7 @@
 
     'description': """
         Phục vụ cho mục đích chạy thử 1 số thay đổi, sau đó deploy trên Odoo
-        Testing 6th time
+        Testing 7th time
     """,
 
     'author': "PepeShop",
