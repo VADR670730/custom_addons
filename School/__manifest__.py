@@ -3,7 +3,7 @@
     'name': "School",
 
     'summary': """
-        Check""",
+        Edited on github""",
 
     'description': """
         Phục vụ cho mục đích chạy thử 1 số thay đổi, sau đó deploy trên Odoo
