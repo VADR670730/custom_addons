@@ -56,21 +56,23 @@
     <menuitem name="Server to list" id="test_module" parent="test_module.menu_2"
               action="test_module.action_server"/>
 -->
+<!--    1 record sẽ bao gồm 1 số tham số được truyền vào, chi tiết search gg sau cho từng model-->
     <record id="student_menu_action" model="ir.actions.act_window">
       <field name="name">Students</field>
-      <field name="res_model">student.student</field>
+      <field name="res_model">student.student</field> <!--Truyền tham số model được tạo ở file models-->
       <field name="type">ir.actions.act_window</field>
+<!--      <field name="image" widget="image"/>-->
       <field name="view_mode">tree,form</field>
       <field name="domain">[]</field>
       <field name="help" type="html">
-      <p class="oe_view_nocontent_create">Create The First Student</p>
+      <p class="o_view_nocontent_smiling_face">Danh sách trống, nhập vào thông tin học sinh</p>
       </field>
     </record>
     <menuitem id="school_menu"
       name = "School"/>
     <menuitem id="school_student_menu"
       parent="school_menu"
-      name="Student"
+      name="Testing Actions"
       action="student_menu_action"/>
   </data>
 </odoo>
