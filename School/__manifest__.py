@@ -3,11 +3,11 @@
     'name': "School",
 
     'summary': """
-        Edited on github""",
+        Test""",
 
     'description': """
         Phục vụ cho mục đích chạy thử 1 số thay đổi, sau đó deploy trên Odoo
-        /a
+        Testing 7th time
     """,
 
     'author': "PepeShop",
@@ -26,6 +26,7 @@
     'data': [
         'security/ir.model.access.csv',
         'views/student_view.xml',
+        'views/teacher_views.xml',
         # 'views/templates.xml',
     ],
     # only loaded in demonstration mode

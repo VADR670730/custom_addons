@@ -23,13 +23,13 @@ class StudentStudent(models.Model):
     # name sẽ tạo 1 bảng trong db dưới dạng student_student
     _name = 'student.student'
     # Với các cột là các fields được định nghĩa trong class StudentStudent
-    name = fields.Char(string='Họ và tên', required=True)
+    name = fields.Char(string='Họ và tên', required=False)
     student_dob = fields.Date(string='Ngày sinh')
     gender = fields.Selection([('male', 'Nam'), ('female', 'Nữ')],
                               string='Giới tính')
-    image = fields.Binary(string='Ảnh')
+    image = fields.Binary(string="Ảnh đại diện")
     # Vùng quản lý địa chỉ
-    street = fields.Char(string='Tên đường', required=True)
+    street = fields.Char(string='Tên đường', required=False)
     city = fields.Many2one('res.country.state', string='Thành phố',store=True)
     Nationality = fields.Many2one('res.country', string='Quốc gia')
 
