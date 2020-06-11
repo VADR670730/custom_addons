@@ -32,9 +32,9 @@ class StudentStudent(models.Model):
     street = fields.Char(string='Tên đường', required=False)
     city = fields.Many2one('res.country.state', string='Thành phố',store=True)
     Nationality = fields.Many2one('res.country', string='Quốc gia')
-
-    # grade = fields.Many2one
-    # Class = fields.Many2one
+    grade = fields.Many2one('class.class')#string='Khối lớp')
+    subname = fields.Many2one('class.class') #string='Tên lớp')
+    full_class_name=fields.Char(compute='get_full_name_of_class',string="Lớp học",readonly=1)
     # link giữa lựa chọn quốc gia với các tỉnh thành tương ứng
     @api.onchange('Nationality')
     def set_values_to_state(self):

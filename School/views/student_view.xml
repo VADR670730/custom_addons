@@ -150,6 +150,14 @@
                         <group>
                             <field name="gender"/>
                             <field name="student_dob"/>
+                            <label for="grade" string="Lớp học"/>
+                            <div class="o_class_format">
+                                <field name="grade" placeholder="Khối lớp" class="o_class_grade"/>
+
+                                <field name="subname" placeholder="Tên lớp" class="o_address_subname"/>
+
+<!--                                <field name="Nationality" placeholder="Quốc gia" class="o_address_country" options='{"no_open": True, "no_create": True}'/>-->
+                            </div>
                             <label for="street" string="Địa chỉ"/>
                             <div class="o_address_format">
                                 <field name="street" placeholder="Tên đường" class="o_address_street"/>

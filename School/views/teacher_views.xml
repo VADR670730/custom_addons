@@ -79,4 +79,7 @@
                   parent="school_menu"
                   name="Giáo viên"
                   action="teacher_menu_action"/>
+
+<!--    Dự tính thêm 1 bảng lớp và khối lớp, bổ sung cột số ngày nghỉ phép và có phép cho học sinh-->
+<!--    Nghiên cứu quản lý học sinh dựa trên các tab-->
 </odoo>
