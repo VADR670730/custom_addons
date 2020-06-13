@@ -24,10 +24,10 @@ class StudentStudent(models.Model):
     _name = 'student.student'
     # Với các cột là các fields được định nghĩa trong class StudentStudent
     name = fields.Char(string='Họ và tên', required=False)
-    student_dob = fields.Date(string='Ngày sinh')
+    student_dob = fields.Date(string='Ngày sinh') #dob
     gender = fields.Selection([('male', 'Nam'), ('female', 'Nữ')],
                               string='Giới tính')
-    image = fields.Binary(string="Ảnh đại diện")
+    image = fields.Binary(string="Ảnh đại diện") #avatar
     # Vùng quản lý địa chỉ
     street = fields.Char(string='Tên đường', required=False)
     city = fields.Many2one('res.country.state', string='Thành phố',store=True)
