@@ -28,6 +28,7 @@
         'views/student_view.xml',
         'views/teacher_views.xml',
         'views/class_view.xml',
+        # 'views/grade_view.xml',
         # 'views/templates.xml',
     ],
     # only loaded in demonstration mode

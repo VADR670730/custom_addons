@@ -31,10 +31,9 @@ class StudentStudent(models.Model):
     # Vùng quản lý địa chỉ
     street = fields.Char(string='Tên đường', required=False)
     city = fields.Many2one('res.country.state', string='Thành phố',store=True)
-    Nationality = fields.Many2one('res.country', string='Quốc gia')
-    grade = fields.Many2one('class.class')#string='Khối lớp')
-    subname = fields.Many2one('class.class') #string='Tên lớp')
-    full_class_name=fields.Char(compute='get_full_name_of_class',string="Lớp học",readonly=1)
+    Nationality = fields.Many2one('res.country', string='Quốc gia', store=True)
+    grade_id= fields.Many2one('grade.grade', string="Khối")
+    class_name = fields.Many2one('class.class',string='Lớp')
     # link giữa lựa chọn quốc gia với các tỉnh thành tương ứng
     @api.onchange('Nationality')
     def set_values_to_state(self):
@@ -42,4 +41,12 @@ class StudentStudent(models.Model):
             ids = self.env['res.country.state'].search([('country_id', '=', self.Nationality.id)])
             return {
                 'domain' : {'city' : [('id', 'in', ids.ids)], }
+            }
+    #link giữa lựa chọn khối lớp với các lớp được hiển thị
+    @api.onchange('grade_id')
+    def set_values_to_state(self):
+        if self.grade_id:
+            ids = self.env['class.class'].search([('grade_id', '=', self.grade_id.id)])
+            return {
+                'domain': {'class_name': [('id', 'in', ids.ids)], }
             }
