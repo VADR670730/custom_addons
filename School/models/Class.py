@@ -8,7 +8,7 @@ class ClassClass(models.Model):
     grade_id = fields.Selection([('1', 'Khối 1'), ('2', 'Khối 2'), ('3', 'Khối 3'), ('4', 'Khối 4'),
                               ('5', 'Khối 5')], string='Khối lớp')
     # Hậu tố các lớp
-    subname = fields.Selection([('A1', 'Lớp A1'), ('a2', 'Lớp A2'), ('A3', 'Lớp A3'), ('A4', 'Lớp A4')
+    subname = fields.Selection([('A1', 'Lớp A1'), ('A2', 'Lớp A2'), ('A3', 'Lớp A3'), ('A4', 'Lớp A4')
                                    , ('A5', 'Lớp A5')], string='Lớp')
 
     # Tên lớp đầy đủ
