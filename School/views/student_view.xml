@@ -176,6 +176,7 @@
                                 <field name="name_father" placeholder="Họ và tên cha"/>
                                 <field name="phone_father" placeholder="Số điện thoại cha"/>
                                 <field name="work_place_father" placeholder="Nơi công tác của cha"/>
+                                <br/>
                                 <field name="name_mother" placeholder="Họ và tên mẹ"/>
                                 <field name="phone_mother" placeholder="Số điện thoại mẹ"/>
                                 <field name="work_place_mother" placeholder="Nơi công tác của mẹ"/>
