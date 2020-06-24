@@ -9,12 +9,9 @@ class TeacherTeacher(models.Model):
     teacher_dob = fields.Date(string='Ngày sinh')
     gender = fields.Selection([('male', 'Nam'), ('female', 'Nữ')],
                               string='Giới tính')
-    image = fields.Binary(string="Ảnh đại diện")
+    avatar = fields.Binary(string="Ảnh đại diện")
     # Vùng quản lý địa chỉ
-    street = fields.Char(string='Tên đường', required=False)
-    city = fields.Many2one('res.country.state', string='Thành phố', store=True)
-    Nationality = fields.Many2one('res.country', string='Quốc gia')
-
+    address = fields.Char(string='Địa chỉ')
     # Grade = fields.Many2one
     # Class = fields.Many2one
     # link giữa lựa chọn quốc gia với các tỉnh thành tương ứng

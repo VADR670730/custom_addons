@@ -84,14 +84,16 @@
                     <field name="id"/>
                     <field name="name"/>
                     <field name="gender"/>
+                    <field name="place_of_birth"/>
                     <field name="student_dob"/>
                     <field name="class_name"/>
+
                     <templates>
                         <t t-name="kanban-box">
                             <div t-attf-class="oe_kanban_global_click">
                                 <div class="o_kanban_image">
                                     <img alt="Avatar"
-                                         t-att-src="kanban_image('student.student','image', record.id.raw_value)"/>
+                                         t-att-src="kanban_image('student.student','avatar', record.id.raw_value)"/>
                                 </div>
                                 <div class="oe_kanban_details">
                                     <strong class="o_kanban_record_title">
@@ -105,6 +107,9 @@
                                     </div>
                                     <div t-if="record.student_dob.value">
                                         <t t-esc="record.student_dob.value"/>
+                                    </div>
+                                    <div t-if="record.place_of_birth.value">
+                                        <t t-esc="record.place_of_birth.value"/>
                                     </div>
                                 </div>
                             </div>
@@ -144,33 +149,36 @@
             <field name="arch" type="xml">
                 <form string="Học sinh">
                     <sheet>
-                        <field name="image" widget='image' class="oe_avatar" options='{"preview_image": "image"}'/>
+                        <field name="avatar" widget='image' class="oe_avatar" options='{"preview_image": "avatar"}'/>
                         <div class="oe_title">
-                            <h1>
+                            <h2>
                                 <field name="name" placeholder="Nhập vào tên học sinh"/>
-                            </h1>
+                            </h2>
                         </div>
-
                         <group>
                             <group>
+                                <h3>Thông tin học sinh</h3>
                                 <field name="gender" placeholder="Chọn giới tính"/>
                                 <field name="student_dob" placeholder="Nhập vào ngày sinh"/>
+                                <field name="place_of_birth" placeholder="Nhập vào nơi sinh"/>
                                 <label for="class" string="Lớp học"/>
                                 <div class="address_format">
                                     <field name="grade_id" style="width:33%" placeholder="Chọn khối"/>
                                     <field name="class_name" style="width: 66%" placeholder="Chọn lớp"/>
-
                                 </div>
                                 <label for="street" string="Địa chỉ"/>
                                 <div class="o_address_format">
-                                    <field name="Nationality" placeholder="Quốc gia" class="o_address_country"
-                                           options='{"no_open": True, "no_create": True}'/>
-                                    <field name="city" placeholder="Tỉnh thành" class="o_address_city"/>
-                                    <field name="street" placeholder="Tên đường" class="o_address_street"/>
-
+                                    <field name="address" placeholder="Nhập vào địa chỉ"/>
                                 </div>
                             </group>
                             <group>
+                                <h3>Thông tin phụ huynh</h3>
+                                <field name="name_father" placeholder="Họ và tên cha"/>
+                                <field name="phone_father" placeholder="Số điện thoại cha"/>
+                                <field name="work_place_father" placeholder="Nơi công tác của cha"/>
+                                <field name="name_mother" placeholder="Họ và tên mẹ"/>
+                                <field name="phone_mother" placeholder="Số điện thoại mẹ"/>
+                                <field name="work_place_mother" placeholder="Nơi công tác của mẹ"/>
                             </group>
                         </group>
                     </sheet>

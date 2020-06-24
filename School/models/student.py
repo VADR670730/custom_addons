@@ -23,26 +23,35 @@ class StudentStudent(models.Model):
     # name sẽ tạo 1 bảng trong db dưới dạng student_student
     _name = 'student.student'
     # Với các cột là các fields được định nghĩa trong class StudentStudent
-    name = fields.Char(string='Họ và tên', required=False)
-    student_dob = fields.Date(string='Ngày sinh') #dob
+    #Quản lý thông tin cá nhân
+    name = fields.Char(string='Họ và tên', required=True)
+    student_dob = fields.Date(string='Ngày sinh',required=True)
     gender = fields.Selection([('male', 'Nam'), ('female', 'Nữ')],
-                              string='Giới tính')
-    image = fields.Binary(string="Ảnh đại diện") #avatar
+                              string='Giới tính',required=True)
+    avatar = fields.Binary(string="Ảnh đại diện")
+    place_of_birth = fields.Char(string='Nơi sinh',required=True )
     # Vùng quản lý địa chỉ
-    street = fields.Char(string='Tên đường', required=False)
-    city = fields.Many2one('res.country.state', string='Thành phố',store=True)
-    Nationality = fields.Many2one('res.country', string='Quốc gia', store=True)
+    address = fields.Char(string='Địa chỉ', store=True,required=True)
+    # Vùng qUản lý lớp học
     grade_id= fields.Many2one('grade.grade', string="Khối")
     class_name = fields.Many2one('class.class',string='Lớp')
+    # Vùng quản lý thông tin cha
+    name_father = fields.Char(string='Họ và tên cha')
+    phone_father = fields.Char(string='Số điện thoại cha')
+    work_place_father = fields.Char(string='Nơi làm việc của cha')
+    # Vùng quản lý thông tin của mẹ
+    name_mother = fields.Char(string='Họ và tên mẹ')
+    phone_mother = fields.Char(string='Số điện thoại mẹ')
+    work_place_mother = fields.Char(string='Nơi làm việc của mẹ')
     # link giữa lựa chọn quốc gia với các tỉnh thành tương ứng
-    @api.onchange('Nationality')
-    def set_values_to_state(self):
-        if self.Nationality:
-            ids = self.env['res.country.state'].search([('country_id', '=', self.Nationality.id)])
-            return {
-                'domain' : {'city' : [('id', 'in', ids.ids)], }
-            }
-    #link giữa lựa chọn khối lớp với các lớp được hiển thị
+    # @api.onchange('Nationality')
+    # def set_values_to_state(self):
+    #     if self.Nationality:
+    #         ids = self.env['res.country.state'].search([('country_id', '=', self.Nationality.id)])
+    #         return {
+    #             'domain' : {'city' : [('id', 'in', ids.ids)], }
+    #         }
+    # #link giữa lựa chọn khối lớp với các lớp được hiển thị
     @api.onchange('grade_id')
     def set_values_to_state(self):
         if self.grade_id:
