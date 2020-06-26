@@ -11,7 +11,7 @@
     </record>
     <menuitem id="school_grade_menu"
                   parent="school_menu"
-                  name="KHối lớp"
+                  name="Khối lớp"
                   action="grade_menu_action"/>
 
 </odoo>

@@ -1,17 +1,87 @@
 <odoo>
     <record id="class_menu_action" model="ir.actions.act_window">
         <field name="name">Class</field>
-            <field name="res_model">class.class</field> <!--Truyền tham số model được tạo ở file models-->
-            <field name="type">ir.actions.act_window</field>
-            <field name="view_mode">tree,form</field>
-            <field name="domain">[]</field>
-            <field name="help" type="html">
-                <p class="o_view_nocontent_smiling_face">Danh sách trống, nhập vào thông tin lớp học</p>
-            </field>
+        <field name="res_model">class.class</field> <!--Truyền tham số model được tạo ở file models-->
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">kanban,form</field>
+        <field name="domain">[]</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Danh sách trống, nhập vào thông tin lớp học</p>
+        </field>
     </record>
     <menuitem id="school_class_menu"
-                  parent="school_menu"
-                  name="Lớp học"
-                  action="class_menu_action"/>
-
+              parent="school_menu"
+              name="Lớp học"
+              action="class_menu_action"/>
+    #Kanban view cho trang chính hiển thị danh sách các lớp học hiện có
+    <record id="class_kanban_view" model="ir.ui.view">
+        <field name="name">res.class.kanban</field>
+        <field name="model">class.class</field>
+        <field name="arch" type="xml">
+            <kanban class="o_teacher_class_details">
+                <field name="id"/>
+                <field name="name"/>
+                <field name="class_size"/>
+                <field name="teacher_on_duty"/>
+                <field name="date_from"/>
+                <field name="date_to"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <strong class="o_kanban_record_title">
+                                    <field name="name"></field>
+                                </strong>
+                                <div t-if="record.class_size.value">
+                                    <t t-esc="record.class_size.value"/>
+                                </div>
+                                <div t-if="record.teacher_on_duty.value">
+                                    <t t-esc="record.teacher_on_duty.value"/>
+                                </div>
+                                <div t-if="record.date_from.value">
+                                    <t t-esc="record.date_from.value"/>
+                                    <t t-esc="- record.date_to.value"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    #View form hiển thị thông tin từng lớp học
+    <record id="view-detail-class-form" model="ir.ui.view">
+        <field name="name">res.class.form.detail</field>
+        <field name="model">class.class</field>
+        <field name="priority" eval="20"/>
+        <field name="arch" type="xml">
+            <form string="Lớp học">
+                <sheet>
+                    <div class="oe_title">
+                        <h2>
+                            <field name="name"/>
+                        </h2>
+                    </div>
+                    <group>
+                        <group>
+                            <h3>Thông tin lớp học</h3>
+                            <br/>
+                            <label for="class" string="Lớp học"/>
+                            <div class="address_format">
+                                <field name="grade_id" style="width:45%" placeholder="Chọn khối"/>
+                                <field name="subname" style="width: 55%" placeholder="Chọn lớp"/>
+                            </div>
+                            <field name="class_size" placeholder="Nhập vào sĩ số lớp"/>
+                            <field name="teacher_on_duty" placeholder="Giáo viên chủ nhiệm"/>
+                            <label for="year" string="Niên khoá"/>
+                            <div class="year_format">
+                                <field name="date_from" style="width:50%" placeholder="Từ năm"/>
+                                <field name="date_to" style="width: 50%" placeholder="Đến năm"/>
+                            </div>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 </odoo>

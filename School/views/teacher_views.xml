@@ -61,12 +61,30 @@
 
                     <group>
                         <group>
+                            <h2>Thông tin cơ bản</h2>
+                            <br/>
                             <field name="gender" placeholder="Chọn giới tính"/>
                             <field name="teacher_dob" placeholder="Chọn ngày sinh"/>
+                            <field name ="teacher_phone" placeholder="Nhập vào số điện thoại"/>
+                            <field name ="teacher_nation" placeholder="Dân tộc"/>
+                            <field name = "teacher_place_of_birth" placeholder="Nơi sinh"/>
                             <label for="street" string="Địa chỉ"/>
                             <div class="o_address_format">
                                 <field name="address" placeholder="Nhập vào địa chỉ"/>
                             </div>
+
+                        </group>
+                        <group>
+                            <h2>Thông tin chuyên môn</h2>
+                            <br/>
+                            <field name="teacher_level" placeholder="Trình độ học vấn"/>
+                            <field name="teacher_graduate_year" placeholder="Năm tốt nghiệp"/>
+                            <field name="teacher_certificate_language" placeholder="....,....,..."/>
+                            <field name="teacher_certificate_IT" placeholder="....,....,..."/>
+                            <field name="teacher_years_of_teaching" placeholder="Số năm tham gia giảng dạy"/>
+                            <field name="teacher_experience" placeholder="Kinh nghiệm thực tế"/>
+                            <field name="teacher_title" placeholder="....,....,..."/>
+                            <field name="teacher_reward" placeholder="....,....,..."/>
                         </group>
                         <group>
                         </group>
