@@ -3,3 +3,5 @@ access_student_student,access.student.student,model_student_student,base.group_u
 access_teacher_teacher,access.teacher.teacher,model_teacher_teacher,base.group_user,1,1,1,1
 access_class_class,access.class.class,model_class_class,base.group_user,1,1,1,1
 access_grade_grade,access.grade.grade,model_grade_grade,base.group_user,1,1,1,1
+access_subject_subject,access.subject.subject,model_subject_subject,base.group_user,1,1,1,1
+access_score_score,access.score.score,model_score_score,base.group_user,1,1,1,1
