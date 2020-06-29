@@ -1,6 +1,6 @@
 <odoo>
     <record id="score_record_menu_action" model="ir.actions.act_window">
-        <field name="name">score_recored</field>
+        <field name="name">Report</field>
             <field name="res_model">score.score</field> <!--Truyền tham số model được tạo ở file models-->
             <field name="type">ir.actions.act_window</field>
             <field name="view_mode">tree,form</field>
@@ -13,5 +13,4 @@
                   parent="school_menu"
                   name="Phiếu điểm"
                   action="score_record_menu_action"/>
-
 </odoo>
