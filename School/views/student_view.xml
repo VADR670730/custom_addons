@@ -65,6 +65,13 @@
                                 <field name="name" placeholder="Nhập vào tên học sinh"/>
                             </h2>
                         </div>
+                        <div name="button_box" position="inside">
+                        <button class="score_report_details" type="action"
+                            name="%(score_record_menu_action)d"
+                            icon="fa-star"
+                            context="{'search_default_student_id': active_id}">
+                        </button>
+                        </div>
                         <group>
                             <group>
                                 <h3>Thông tin học sinh</h3>
