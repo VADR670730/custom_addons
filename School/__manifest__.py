@@ -25,10 +25,10 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'views/score_record_view.xml',
         'views/student_view.xml',
         'views/teacher_views.xml',
         'views/class_view.xml',
-        'views/score_record_view.xml',
         'views/subject_view.xml',
         # 'views/grade_view.xml',
         # 'views/templates.xml',

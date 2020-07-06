@@ -1,16 +1,98 @@
 <odoo>
+    <record id="score_record_button_student_action" model="ir.actions.act_window">
+        <field name="name">Report</field>
+        <field name="res_model">score.score</field> <!--Truyền tham số model được tạo ở file models-->
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">kanban,form</field>
+        <field name="domain">[('student_id','=', active_id)]</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Danh sách trống, thêm vào các phiếu điểm</p>
+        </field>
+    </record>
     <record id="score_record_menu_action" model="ir.actions.act_window">
         <field name="name">Report</field>
-            <field name="res_model">score.score</field> <!--Truyền tham số model được tạo ở file models-->
-            <field name="type">ir.actions.act_window</field>
-            <field name="view_mode">tree,form</field>
-            <field name="domain">[('student_id','=', active_id)]</field>
-            <field name="help" type="html">
-                <p class="o_view_nocontent_smiling_face">Danh sách trống, thêm vào các phiếu điểm</p>
-            </field>
+        <field name="res_model">score.score</field> <!--Truyền tham số model được tạo ở file models-->
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">kanban,form</field>
+        <field name="domain">[]</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Danh sách trống, thêm vào các phiếu điểm</p>
+        </field>
+    </record>
+    #Xem thông tin từng phiếu điểm
+    <record id="view-detail-score-record-form" model="ir.ui.view">
+        <field name="name">res.student.score_record.detail</field>
+        <field name="model">score.score</field>
+        <field name="priority" eval="20"/>
+        <field name="arch" type="xml">
+            <form string="Phiếu điểm">
+                <sheet>
+                    <div class="oe_title">
+                        <h2>
+                            <field name="student_id" placeholder="Tên học sinh"/>
+                        </h2>
+                    </div>
+                    <group>
+                        <group>
+                            <h3>Thông tin phiếu điểm</h3>
+                            <field name="subject_id" placeholder="Tên môn học"/>
+                            <field name="score_process" placeholder="Điểm quá trình"/>
+                            <field name="score_midterm" placeholder="Điểm giữa kỳ"/>
+                            <field name="score_final" placeholder="Điểm cuối kỳ"/>
+                            <field name="score_average" placeholder="Điểm trung bình"/>
+                            <field name="school_term" placeholder="Học kỳ"/>
+                            <label for="year" string="Niên khoá"/>
+                            <div class="school_year_format">
+                                <field name="date_from" style="width:30%" placeholder="Bắt đầu"/>
+                                <field name="date_to" style="width: 30%" placeholder="Kết thúc"/>
+                            </div>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    #Kanban view cho trang chính hiển thị danh sách các phiếu điểm
+    <record id="score_record_kanban_view" model="ir.ui.view">
+        <field name="name">res.score_record.kanban</field>
+        <field name="model">score.score</field>
+        <field name="arch" type="xml">
+            <kanban class="o_score_record_kanban_details">
+                <field name="student_id"/>
+                <field name="subject_id"/>
+                <field name="score_average"/>
+                <field name="school_term"/>
+                <field name="date_from"/>
+                <field name="date_to"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <strong class="o_kanban_record_title">
+                                    <field name="student_id"></field>
+                                </strong>
+                                <div t-if="record.subject_id.value">
+                                    <t t-esc="record.subject_id.value"/>
+                                </div>
+                                <div t-if="record.score_average.value">
+                                    <t t-esc="record.score_average.value"/>
+                                </div>
+                                <div t-if="record.school_term.value">
+                                    <t t-esc="record.school_term.value"/>
+                                </div>
+                                <div t-if="record.date_from.value">
+                                    <t t-esc="record.date_from.value"/>
+                                    <t t-esc="- record.date_to.value"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
     </record>
     <menuitem id="school_score_record_menu"
-                  parent="school_menu"
-                  name="Phiếu điểm"
-                  action="score_record_menu_action"/>
+              parent="school_menu"
+              name="Phiếu điểm"
+              action="score_record_menu_action"/>
 </odoo>

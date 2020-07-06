@@ -34,7 +34,7 @@ class StudentStudent(models.Model):
     address = fields.Char(string='Địa chỉ', store=True,required=True)
     # Vùng qUản lý lớp học
     grade_id= fields.Many2one('grade.grade', string="Khối")
-    class_name = fields.Many2one('class.class',string='Lớp')
+    class_id = fields.Many2one('class.class',string='Lớp')
     # Vùng quản lý thông tin cha
     name_father = fields.Char(string='Họ và tên cha')
     phone_father = fields.Char(string='Số điện thoại cha')
@@ -57,5 +57,5 @@ class StudentStudent(models.Model):
         if self.grade_id:
             ids = self.env['class.class'].search([('grade_id', '=', self.grade_id.id)])
             return {
-                'domain': {'class_name': [('id', 'in', ids.ids)], }
+                'domain': {'class_id': [('id', 'in', ids.ids)], }
             }
