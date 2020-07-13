@@ -13,7 +13,7 @@
               parent="school_menu"
               name="Lớp học"
               action="class_menu_action"/>
-<!--    #Kanban view cho trang chính hiển thị danh sách các lớp học hiện có-->
+    <!--    #Kanban view cho trang chính hiển thị danh sách các lớp học hiện có-->
     <record id="class_kanban_view" model="ir.ui.view">
         <field name="name">res.class.kanban</field>
         <field name="model">class.class</field>
@@ -49,7 +49,7 @@
             </kanban>
         </field>
     </record>
-<!--    #View form hiển thị thông tin từng lớp học-->
+    <!--    #View form hiển thị thông tin từng lớp học-->
     <record id="view-detail-class-form" model="ir.ui.view">
         <field name="name">res.class.form.detail</field>
         <field name="model">class.class</field>
@@ -57,16 +57,23 @@
         <field name="arch" type="xml">
             <form string="Lớp học">
                 <sheet>
-<!--                    Button lọc danh sách học sinh theo từng lớp học-->
-                     <div class="oe_button_box" name="button_box">
-                            <button class="oe_highlight"
-                                    type="action"
-                                    name="%(student_display_by_button_action)d"
-                                    string="Danh sách học sinh"
-                                    icon="fa-list"
-                                    context="{'search_default_class_id': active_id}">
-                            </button>
-                        </div>
+                    <!--                    Button lọc danh sách học sinh theo từng lớp học-->
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_highlight"
+                                type="action"
+                                name="%(student_display_by_button_action)d"
+                                string="Danh sách học sinh"
+                                icon="fa-list"
+                                context="{'search_default_class_id': active_id}">
+                        </button>
+                        <button class="oe_highlight"
+                                type="action"
+                                name="%(schedule_action_window_by_clicking)d"
+                                string="Thời khoá biểu"
+                                icon="fa-calendar"
+                                context="{'search_default_class_id': active_id}">
+                        </button>
+                    </div>
                     <div class="oe_title">
                         <h2>
                             <field name="name"/>

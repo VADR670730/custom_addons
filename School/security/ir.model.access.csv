@@ -5,3 +5,4 @@ access_class_class,access.class.class,model_class_class,base.group_user,1,1,1,1
 access_grade_grade,access.grade.grade,model_grade_grade,base.group_user,1,1,1,1
 access_subject_subject,access.subject.subject,model_subject_subject,base.group_user,1,1,1,1
 access_score_score,access.score.score,model_score_score,base.group_user,1,1,1,1
+access_schedule_schedule,access.schedule.schedule,model_schedule_schedule,base.group_user,1,1,1,1

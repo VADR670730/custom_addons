@@ -26,6 +26,7 @@
     'data': [
         'security/ir.model.access.csv',
         'views/score_record_view.xml',
+        'views/class_schedule.xml',
         'views/student_view.xml',
         'views/teacher_views.xml',
         'views/class_view.xml',

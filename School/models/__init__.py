@@ -6,3 +6,4 @@ from . import Class
 from . import grade
 from . import score_record
 from . import  subject
+from . import schedule
