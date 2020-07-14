@@ -25,13 +25,3 @@ class TeacherTeacher(models.Model):
     teacher_experience = fields.Char(string='Kinh nghiệm thực tế')
     teacher_title = fields.Char(string='Danh hiệu đạt được')
     teacher_reward = fields.Char(string='Giải thưởng đạt được')
-    # Grade = fields.Many2one
-    # Class = fields.Many2one
-    # # link giữa lựa chọn quốc gia với các tỉnh thành tương ứng
-    # @api.onchange('Nationality')
-    # def set_values_to_state(self):
-    #     if self.Nationality:
-    #         ids = self.env['res.country.state'].search([('country_id', '=', self.Nationality.id)])
-    #         return {
-    #             'domain': {'city': [('id', 'in', ids.ids)], }
-    #         }

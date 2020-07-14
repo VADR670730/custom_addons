@@ -3,11 +3,10 @@
     'name': "School",
 
     'summary': """
-        Test""",
+        School""",
 
     'description': """
-        Phục vụ cho mục đích chạy thử 1 số thay đổi, sau đó deploy trên Odoo
-        Testing 7th time
+        Module quản lý trường học
     """,
 
     'author': "PepeShop",
@@ -33,6 +32,7 @@
         'views/subject_view.xml',
         # 'views/grade_view.xml',
         # 'views/templates.xml',
+        #Last Update at 14/07/2020
     ],
     # only loaded in demonstration mode
     'demo': [

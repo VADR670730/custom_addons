@@ -119,7 +119,9 @@
             </field>
         </record>
         <menuitem id="school_menu"
-                  name="School"/>
+                  name="School"
+                  web_icon="School,static/description/icon.png"
+             />
         <menuitem id="school_student_menu"
                   parent="school_menu"
                   name="Học sinh"

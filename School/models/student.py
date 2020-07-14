@@ -43,14 +43,6 @@ class StudentStudent(models.Model):
     name_mother = fields.Char(string='Họ và tên mẹ')
     phone_mother = fields.Char(string='Số điện thoại mẹ')
     work_place_mother = fields.Char(string='Nơi làm việc của mẹ')
-    # link giữa lựa chọn quốc gia với các tỉnh thành tương ứng
-    # @api.onchange('Nationality')
-    # def set_values_to_state(self):
-    #     if self.Nationality:
-    #         ids = self.env['res.country.state'].search([('country_id', '=', self.Nationality.id)])
-    #         return {
-    #             'domain' : {'city' : [('id', 'in', ids.ids)], }
-    #         }
     # #link giữa lựa chọn khối lớp với các lớp được hiển thị
     @api.onchange('grade_id')
     def set_values_to_state(self):
