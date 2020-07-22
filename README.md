@@ -18,7 +18,7 @@ Do đó nhóm chúng em phát triển module **Quản lý trường tiểu học
 
 **Vài hình ảnh minh hoạ**
  ![Module Info](/screenshots/module_information.PNG)
- ![Student Info](/screenshots/stundent_information.PNG)
+ ![Student Info](/screenshots/student_information.PNG)
 
 
 **Các nguồn tham khảo**
