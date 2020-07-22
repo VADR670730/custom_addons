@@ -23,6 +23,7 @@ Do đó nhóm chúng em phát triển module **Quản lý trường tiểu học
 **Database mẫu**
 
 * [Download](/database/UIT_2020-07-22_15-14-45.zip)
+
 **Các nguồn tham khảo**
 
 * Odoo 13 Github: [Odoo13](https://github.com/odoo/odoo)
