@@ -1,4 +1,3 @@
-[x] Finished!
 
 # Odoo Custom Module
 ## Giới thiệu về phần mềm ERP mã nguồn mở - Odoo
