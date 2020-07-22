@@ -20,10 +20,13 @@ Do đó nhóm chúng em phát triển module **Quản lý trường tiểu học
  ![Student Info](/screenshots/student_information.PNG)
 
 
+**Database mẫu**
+
+* [Download](/database/UIT_2020-07-22_15-14-45.zip)
 **Các nguồn tham khảo**
 
 * Odoo 13 Github: [Odoo13](https://github.com/odoo/odoo)
 
-* Odoo 13 Document: [Odoo13Doc](https://www.odoo.com/documentation/13.0/howtos/backend.html)
+* Odoo 13 [Documentation](https://www.odoo.com/documentation/13.0/howtos/backend.html)
 
-* Hướng dẫn phát triển module Odoo: [HuongDan](https://dammecode.wordpress.com/2018/07/28/odoo/)
+* Hướng dẫn phát triển module Odoo: [Dammecode](https://dammecode.wordpress.com/2018/07/28/odoo/)
